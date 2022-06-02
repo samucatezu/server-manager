@@ -1,8 +1,8 @@
 package com.samucatezu.servermanagerbackend.resource;
 
 
-import com.samucatezu.servermanagerbackend.model.ResponseModel;
-import com.samucatezu.servermanagerbackend.model.ServerModel;
+import com.samucatezu.servermanagerbackend.model.Response;
+import com.samucatezu.servermanagerbackend.model.Server;
 import com.samucatezu.servermanagerbackend.services.implementation.ServerServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -30,10 +30,10 @@ public class ServerResource {
     private final ServerServiceImpl serverService;
 
     @GetMapping("/list")
-    public ResponseEntity<ResponseModel> getServers() throws InterruptedException {
+    public ResponseEntity<Response> getServers() throws InterruptedException {
         TimeUnit.SECONDS.sleep(3);
         return ResponseEntity.ok(
-                ResponseModel.builder()
+                Response.builder()
                         .timeStamp(now())
                         .data(of("servers", serverService.list(30)))
                         .message("Servers retrieved")
@@ -44,13 +44,13 @@ public class ServerResource {
     }
 
     @GetMapping("/ping/{ipAddress}")
-    public ResponseEntity<ResponseModel> pingServer(@PathVariable("ipAddress") String ipAddress) throws IOException {
-        ServerModel serverModel = serverService.ping(ipAddress);
+    public ResponseEntity<Response> pingServer(@PathVariable("ipAddress") String ipAddress) throws IOException {
+        Server server = serverService.ping(ipAddress);
         return ResponseEntity.ok(
-                ResponseModel.builder()
+                Response.builder()
                         .timeStamp(now())
-                        .data(of("server", serverModel))
-                        .message(serverModel.getStatus() == SERVER_UP ? "Ping success" : "Ping failed")
+                        .data(of("server", server))
+                        .message(server.getStatus() == SERVER_UP ? "Ping success" : "Ping failed")
                         .status(OK)
                         .statusCode(OK.value())
                         .build()
@@ -58,11 +58,11 @@ public class ServerResource {
     }
 
     @PostMapping("/save")
-    public ResponseEntity<ResponseModel> saveServer(@RequestBody @Valid ServerModel serverModel) {
+    public ResponseEntity<Response> saveServer(@RequestBody @Valid Server server) {
         return ResponseEntity.ok(
-                ResponseModel.builder()
+                Response.builder()
                         .timeStamp(now())
-                        .data(of("server", serverService.create(serverModel)))
+                        .data(of("server", serverService.create(server)))
                         .message("Server created")
                         .status(CREATED)
                         .statusCode(CREATED.value())
@@ -71,9 +71,9 @@ public class ServerResource {
     }
 
     @GetMapping("/get/{id}")
-    public ResponseEntity<ResponseModel> getServer(@PathVariable("id") Long id) {
+    public ResponseEntity<Response> getServer(@PathVariable("id") Long id) {
         return ResponseEntity.ok(
-                ResponseModel.builder()
+                Response.builder()
                         .timeStamp(now())
                         .data(of("server", serverService.get(id)))
                         .message("Server retrieved")
@@ -84,9 +84,9 @@ public class ServerResource {
     }
 
     @DeleteMapping("/delete/{id}")
-    public ResponseEntity<ResponseModel> deleteServer(@PathVariable("id") Long id) {
+    public ResponseEntity<Response> deleteServer(@PathVariable("id") Long id) {
         return ResponseEntity.ok(
-                ResponseModel.builder()
+                Response.builder()
                         .timeStamp(now())
                         .data(of("deleted", serverService.delete(id)))
                         .message("Server deleted")

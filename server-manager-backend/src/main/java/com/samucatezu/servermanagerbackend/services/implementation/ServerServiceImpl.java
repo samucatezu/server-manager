@@ -1,6 +1,6 @@
 package com.samucatezu.servermanagerbackend.services.implementation;
 
-import com.samucatezu.servermanagerbackend.model.ServerModel;
+import com.samucatezu.servermanagerbackend.model.Server;
 import com.samucatezu.servermanagerbackend.repository.ServerRepository;
 import com.samucatezu.servermanagerbackend.services.ServerService;
 import lombok.RequiredArgsConstructor;
@@ -30,38 +30,38 @@ public class ServerServiceImpl implements ServerService {
     private final ServerRepository serverRepository;
 
     @Override
-    public ServerModel create(ServerModel serverModel) {
-        log.info("Saving new server: {}", serverModel.getName());
-        serverModel.setImageUrl(setServerImageUrl());
-        return serverRepository.save(serverModel);
+    public Server create(Server server) {
+        log.info("Saving new server: {}", server.getName());
+        server.setImageUrl(setServerImageUrl());
+        return serverRepository.save(server);
     }
 
     @Override
-    public ServerModel ping(String ipAddress) throws IOException {
+    public Server ping(String ipAddress) throws IOException {
         log.info("Pinging server IP: {}", ipAddress);
-        ServerModel serverModel = serverRepository.findByIpAddress(ipAddress);
+        Server server = serverRepository.findByIpAddress(ipAddress);
         InetAddress address = InetAddress.getByName(ipAddress);
-        serverModel.setStatus(address.isReachable(10000) ? SERVER_UP : SERVER_DOWN);
-        serverRepository.save(serverModel);
-        return serverModel;
+        server.setStatus(address.isReachable(10000) ? SERVER_UP : SERVER_DOWN);
+        serverRepository.save(server);
+        return server;
     }
 
     @Override
-    public Collection<ServerModel> list(int limit) {
+    public Collection<Server> list(int limit) {
         log.info("Fetching all servers");
         return serverRepository.findAll(of(0, limit)).toList();
     }
 
     @Override
-    public ServerModel get(Long id) {
+    public Server get(Long id) {
         log.info("Fetching server by id: {}", id);
         return serverRepository.findById(id).get();
     }
 
     @Override
-    public ServerModel update(ServerModel serverModel) {
-        log.info("Updating server: {}", serverModel.getName());
-        return serverRepository.save(serverModel);
+    public Server update(Server server) {
+        log.info("Updating server: {}", server.getName());
+        return serverRepository.save(server);
     }
 
     @Override

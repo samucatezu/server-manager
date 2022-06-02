@@ -3,19 +3,17 @@ package com.samucatezu.servermanagerbackend.model;
 import com.samucatezu.servermanagerbackend.enumeration.Status;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.Generated;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
 
 
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class ServerModel {
+public class Server {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

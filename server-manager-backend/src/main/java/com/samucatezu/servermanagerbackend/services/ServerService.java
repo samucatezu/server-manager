@@ -1,16 +1,16 @@
 package com.samucatezu.servermanagerbackend.services;
 
 
-import com.samucatezu.servermanagerbackend.model.ServerModel;
+import com.samucatezu.servermanagerbackend.model.Server;
 
 import java.io.IOException;
 import java.util.Collection;
 
 public interface ServerService {
-    ServerModel create(ServerModel serverModel);
-    ServerModel ping(String ipAddress) throws IOException;
-    Collection<ServerModel> list(int limit);
-    ServerModel get(Long id);
-    ServerModel update(ServerModel serverModel);
+    Server create(Server server);
+    Server ping(String ipAddress) throws IOException;
+    Collection<Server> list(int limit);
+    Server get(Long id);
+    Server update(Server server);
     Boolean delete(Long id);
 }
