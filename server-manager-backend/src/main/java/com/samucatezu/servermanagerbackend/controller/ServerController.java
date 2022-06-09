@@ -1,4 +1,4 @@
-package com.samucatezu.servermanagerbackend.resource;
+package com.samucatezu.servermanagerbackend.controller;
 
 
 import com.samucatezu.servermanagerbackend.model.Response;
@@ -26,7 +26,7 @@ import static org.springframework.http.MediaType.IMAGE_PNG_VALUE;
 @RestController
 @RequestMapping("/server")
 @RequiredArgsConstructor
-public class ServerResource {
+public class ServerController {
     private final ServerServiceImpl serverService;
 
     @GetMapping("/list")

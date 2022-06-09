@@ -1,0 +1,4 @@
+insert into `server_model` (`id`, `image_url`, `ip_address`, `memory`, `name`, `status`, `type`) values ('1', 'http://localhost:8080/server/image/server1.png', '192.168.1.160', '16 GB', 'Ubuntu Linux', 0, 'Personal PC');
+insert into `server_model` (`id`, `image_url`, `ip_address`, `memory`, `name`, `status`, `type`) values ('2', 'http://localhost:8080/server/image/server2.png', '192.168.1.58', '16 GB', 'Fedora Linux', 1, 'Dell Tower');
+insert into `server_model` (`id`, `image_url`, `ip_address`, `memory`, `name`, `status`, `type`) values ('3', 'http://localhost:8080/server/image/server3.png', '192.168.1.21', '32 GB', 'MS 2008', 0, 'Web Server');
+insert into `server_model` (`id`, `image_url`, `ip_address`, `memory`, `name`, `status`, `type`) values ('4', 'http://localhost:8080/server/image/server4.png', '192.168.1.14', '64 GB', 'Red Hat Enterprise Linux', 1, 'Mail Server');
