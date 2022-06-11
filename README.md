@@ -22,3 +22,10 @@ Ferramentas utilizadas:
 - [maven] - automação de compilação
 - [Jakarta XML] - para os reports em xls
 
+# API sendo consumida no Front
+
+## Lista de todos os servidores do gerenciador
+![tela-de-servidores](https://user-images.githubusercontent.com/86020448/173208153-b97faf23-74f5-4bac-8731-48bb9e9ec5b5.png)
+
+## Adicionando servidores
+![tela-de-adicao](https://user-images.githubusercontent.com/86020448/173208152-63285890-36e7-416e-9efd-67dab2f55d6a.png)
