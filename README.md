@@ -29,3 +29,17 @@ Ferramentas utilizadas:
 
 ## Adicionando servidores
 ![tela-de-adicao](https://user-images.githubusercontent.com/86020448/173208152-63285890-36e7-416e-9efd-67dab2f55d6a.png)
+
+
+# Tutoriais seguidos: 
+https://www.youtube.com/watch?v=8ZPsZBcue50&t=3675s
+
+https://www.youtube.com/watch?v=JAyjGiQHWf8&t=1688s
+
+https://www.youtube.com/watch?v=4NmfQ2qZZjM&t=2s
+
+https://www.youtube.com/watch?v=9SGDpanrc8U
+
+https://www.youtube.com/watch?v=9SGDpanrc8U
+
+```⚠️ O projeto ainda precisa de alguns reparos de CORs policy para poder fazer o deploy porem, em localhost, o mesmo funciona perfeitamente ⚠```
