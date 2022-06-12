@@ -42,4 +42,4 @@ https://www.youtube.com/watch?v=9SGDpanrc8U
 
 https://www.youtube.com/watch?v=9SGDpanrc8U
 
-```⚠️ O projeto ainda precisa de alguns reparos de CORs policy para poder fazer o deploy porem, em localhost, o mesmo funciona perfeitamente ⚠```
+```⚠️ O projeto ainda precisa de alguns reparos de CORs policy para poder fazer o deploy do front porem, em localhost, o mesmo funciona perfeitamente ⚠```
