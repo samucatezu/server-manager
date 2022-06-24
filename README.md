@@ -1,6 +1,8 @@
 ## Server manager
 Projeto criado para fins de estudos onde foram criandos o front-end e o back-end de um WEB app de gerenciamento de servidores.
 
+⚠️ ```O servidor foi desabilitado devido ao esgotamento de horas do free tier da AWS, utilizarei-o em outros projetos```
+
 Confira a API aqui: http://servermanagerbackend-env-1.eba-uu28akxc.us-east-1.elasticbeanstalk.com/swagger-ui.html#
 
 ## funcionalidades
